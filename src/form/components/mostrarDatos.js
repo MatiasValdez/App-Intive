@@ -1,11 +1,10 @@
 import React from 'react';
-import  './mostrarDatos.scss'
-import  './mostrarDatos.css'
+import  './mostrarDatos.css';
 
 function MostrarDatos() {
   return (
       <input className="ContainerDatos">
-        
+
       </input>
   )
 }

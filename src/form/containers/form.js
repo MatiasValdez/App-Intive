@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './form.css';
-import './form.scss';
 import MostrarDatos from '../components/mostrarDatos.js';
 
 class Form extends Component {
