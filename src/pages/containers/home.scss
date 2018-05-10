@@ -1,0 +1,14 @@
+// Variables
+@import "../../scss/_variables.scss";
+
+*{
+  font: $base-font;
+}
+.container {
+  min-width: 800px;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: $color-background;
+  border-radius: $border-radio;
+  border: $color-homeBorder;
+ }

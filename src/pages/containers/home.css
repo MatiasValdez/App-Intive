@@ -1,0 +1,14 @@
+/*General*/
+/*button*/
+/*tipografia*/
+/*Background*/
+* {
+  font: sans-serif; }
+
+.container {
+  min-width: 800px;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: #EEEEEE;
+  border-radius: 12px;
+  border: 1px solid black; }
