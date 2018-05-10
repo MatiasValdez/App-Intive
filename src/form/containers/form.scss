@@ -27,6 +27,22 @@
   grid-row: 1 / 2;
   justify-self: center;
   margin:$form-margin;
+  width: 300px;
+  height: 350px;
+  background: #FFFFFF;
+  border-radius: $button-border-radius;
+  border: $button-border;
+  th {
+    font-weight: initial;
+    font-size: $small-font-size;
+    float: left;
+    margin-left: 10px;
+  }
+  p {
+    font-size: $extra-small-font-size;
+    margin: 10px auto 5px 10px;
+    color: $strong-grey;
+  }
 }
 
 

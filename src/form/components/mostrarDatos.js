@@ -1,11 +1,15 @@
 import React from 'react';
 import  './mostrarDatos.css';
 
-function MostrarDatos() {
+function MostrarDatos (props) {
   return (
-      <input className="ContainerDatos">
 
-      </input>
+        <tr>
+          <th>{props.name} - </th>
+          <th>{props.country} - </th>
+          <th>{props.age}</th>
+        </tr>
+
   )
 }
 

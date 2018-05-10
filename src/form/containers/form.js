@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './form.css';
 import MostrarDatos from '../components/mostrarDatos.js';
+import FormData from '../../stores/formStore.js';
 
 class Form extends Component {
-
+state = {
+  UserData: FormData.getAll(),
+};
   render() {
+    console.log(this.state.todos);
     return (
       <div className="ContainerForm">
         <form className="FormInput">
@@ -32,7 +36,19 @@ class Form extends Component {
           </div>
         </form>
         <div className="FormOutput">
-          <MostrarDatos />
+          <p>Visitantes Anteriores</p>
+          <table className="Tabla">
+            {  this.state.UserData.map(e => {
+                return (
+                  <MostrarDatos
+                    name= {e.name}
+                    country= {e.country}
+                    age= {e.age}
+                  />
+                )
+              })
+            }
+          </table>
         </div>
       </div>
     )
