@@ -1,7 +1,7 @@
 import React from 'react';
 import './layout.css';
 
-function Title() {
+function Title () {
   return (
     <div className="TitleContainer">
       <div className="Ejercicio">Ejercicio Intive</div>
