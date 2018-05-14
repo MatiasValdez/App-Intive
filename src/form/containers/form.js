@@ -11,14 +11,16 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      UserData: FormDataStore.getAll(),
+      userData: FormDataStore.getAll(),
+      leyenda: FormDataStore.getLeyenda(),
     };
   }
 
   componentWillMount() {  //agrego el listener aca
     FormDataStore.on("change", () => {
       this.setState ({
-        UserData: FormDataStore.getAll(),
+        userData: FormDataStore.getAll(),
+        leyenda: FormDataStore.getLeyenda(),
       })
     })
   }
@@ -57,8 +59,11 @@ class Form extends Component {
 
         <div className="FormOutput">
           <OutputData
-            UserData = {this.state.UserData}
+            userData = {this.state.userData}
            />
+        </div>
+        <div className="leyenda">
+          {this.state.leyenda}
         </div>
       </div>
     )

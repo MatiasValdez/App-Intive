@@ -3,12 +3,13 @@ import './outputData.css';
 import ShowPrevData from './showPrevData';
 
 function outputData(props) {
+
   return (
-    <div>
+    <div className="ContainerTable">
       <p>Visitantes Anteriores</p>
-      <table className="Tabla">
+      <table className="Table">
         <tbody>
-          {  props.UserData.map(e => {
+          {  props.userData.map(e => {
             return (
               <ShowPrevData
                 key = {e.id}
@@ -21,6 +22,7 @@ function outputData(props) {
         }
       </tbody>
     </table>
+
   </div>
   )
 }

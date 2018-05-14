@@ -4,9 +4,8 @@
 
 .ContainerForm {
   display: grid;
-  grid-template: 500px / 1fr 1f;
+  grid-template: 500px / 1fr 1fr;
 }
-
 
 .FormOutput {
   grid-column: 2 / 3;
@@ -18,15 +17,13 @@
   background: #FFFFFF;
   border-radius: $button-border-radius;
   border: $button-border;
-
+  overflow-y: auto;
 }
-
 
 input {
   border-radius: $button-border-radius;
   border: $button-border;
 }
-
 
 .Saludar {
   grid-column: 2/3;
@@ -38,4 +35,13 @@ input {
   font-weight: bold;
   border-radius: $button-border-radius;
   border: none;
+}
+
+.leyenda {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: end;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  color: $strong-grey;
 }

@@ -1,12 +1,13 @@
 /*General*/
 $base-background-color: #EEEEEE;
-$strong-grey: darken($base-background-color, 40%);
+$strong-grey: darken($base-background-color, 60%);
+$medium-grey: darken($base-background-color, 40%);
 $light-grey: darken($base-background-color, 10%);
 
 /*button*/
 $primary-button-color: #FFFFFF;
 $primary-button-background-color: #337AB7;
-$button-border-radius: 5px;
+$button-border-radius: 4px;
 $button-border: 2px solid $light-grey;
 
 

@@ -8,11 +8,3 @@ export function submitData(name, country, age) {
     age,
   });
 }
-export function deleteData(name, country, age) {
-  dispatcher.dispatch({
-    type: "DELETE",
-    name,
-    country,
-    age,
-  });
-}
