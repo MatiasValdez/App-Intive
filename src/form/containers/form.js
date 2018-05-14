@@ -1,32 +1,76 @@
 import React, { Component } from 'react';
 import './form.css';
-import ShowData from '../components/showData.js';
+import ShowPrevData from '../components/ShowPrevData.js';
 import InputData from '../components/inputData.js';
-import FormData from '../../stores/formStore.js';
+import FormDataStore from '../../stores/formStore.js';
+import * as formActions from '../../actions/formActions.js';  //importa functions por separado, como es como si estuvieran en un objeto
+import apiPaises from '../../api.json';
 
 
 class Form extends Component {
-state = {
-  UserData: FormData.getAll(),
-};
+  constructor() {
+    super();
+    this.state = {
+      UserData: FormDataStore.getAll(),
+    };
+  }
+
+  componentWillMount() {  //agrego el listener aca
+    FormDataStore.on("change", () => {
+      this.setState ({
+        UserData: FormDataStore.getAll(),
+      })
+    })
+  }
+
+  submitData = e => {
+    e.preventDefault();
+    console.log(this.inputName.value);
+    formActions.submitData(
+      this.inputName.value,
+      this.inputCountry.value,
+      this.inputAge.value
+    )
+    console.log(this.state.UserData)
+  }
+  inputRefName = element => {
+    this.inputName = element;
+  }
+  inputRefCountry = element => {
+    this.inputCountry = element;
+  }
+  inputRefAge = element => {
+    this.inputAge = element;
+  }
+
+
   render() {
-    console.log(this.state.todos);
     return (
       <div className="ContainerForm">
-          <InputData />
+          <InputData
+            inputRefName = {this.inputRefName}
+            inputRefCountry = {this.inputRefCountry}
+            inputRefAge = {this.inputRefAge}
+            submitData = {this.submitData}
+            countries = {apiPaises}
+          />
+
         <div className="FormOutput">
           <p>Visitantes Anteriores</p>
           <table className="Tabla">
-            {  this.state.UserData.map(e => {
-                return (
-                  <ShowData
-                    name= {e.name}
-                    country= {e.country}
-                    age= {e.age}
-                  />
-                )
-              })
-            }
+            <tbody>
+              {  this.state.UserData.map(e => {
+                  return (
+                    <ShowPrevData
+                      key = {e.id}
+                      name = {e.name}
+                      country = {e.country}
+                      age = {e.age}
+                    />
+                  )
+                })
+              }
+            </tbody>
           </table>
         </div>
       </div>

@@ -1,28 +1,44 @@
 import React from 'react';
-import './inputData.css'
+import './inputData.css';
 
-function InputData () {
+function InputData (props) {
+  const pais = props.countries.paises;
+
   return (
     <form className="FormInput">
       <div className="Col1">
+
         <label>Nombre:</label>
           <input
+            ref={props.inputRefName}
             type="text"
-            id="Nombre"
+            id="Name"
            ></input>
+
         <label>Pais:</label>
-          <select>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+          <select
+            ref={props.inputRefCountry}
+            required
+            defaultValue="Argentina"
+          >
+            {
+              pais.map((country) => {
+                return <option
+                  value = {country.name}
+                  key={country.name}
+                >{country.name}</option>
+              })
+            }
           </select>
+
         <label>Edad:</label>
           <input
+            ref={props.inputRefAge}
             type="text"
-            id="Edad"
+            id="Age"
           ></input>
-          <input type="submit" value="Saludar" className="Saludar" />
+
+          <input onClick={(e) => props.submitData(e)} type="submit" value="Saludar" className="Saludar" />
       </div>
     </form>
   )
