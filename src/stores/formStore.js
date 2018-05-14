@@ -16,37 +16,37 @@ class FormStore extends EventEmitter {
   }
 
   calculateAge (birthday) {
-    var birthday = birthday.split("/");
+    var birthday_arr = birthday.split("/");
     var fechaRandom = [
       this.numeroAleatorio(1, 31),
       this.numeroAleatorio(1, 12),
       this.numeroAleatorio(2018, 2030)
     ];
     // fechaRandom[1] = 7;
-    this.edadFutura = fechaRandom[2] - birthday[2];
-    this.mesFuturo = fechaRandom[1]
-    this.diaFuturo = fechaRandom[0]
-    if ( fechaRandom[1] < birthday[1] ) {  //Si el mes de la fecha random es menor al mse de cumpleanos
-      this.edadFutura--;
+    this.ageFuture = fechaRandom[2] - birthday_arr[2];
+    this.monthFuture = fechaRandom[1]
+    this.dayFuture = fechaRandom[0]
+    if ( fechaRandom[1] < birthday_arr[1] ) {  //Si el mes de la fecha random es menor al mse de cumpleanos
+      this.ageFuture--;
     }
-    if ( fechaRandom[2] === birthday[2] && fechaRandom[0] < birthday[0]) {  //si el mes random == al de cumpleanos Y el dia es menos al dia que cumple años
-      this.edadFutura--;
+    if ( fechaRandom[2] === birthday_arr[2] && fechaRandom[0] < birthday_arr[0]) {  //si el mes random == al de cumpleanos Y el dia es menos al dia que cumple años
+      this.ageFuture--;
     }
   }
 
   submitData (name, country, age) {
-let edadFutura = this.edadFutura;
-let mesFuturo = this.mesFuturo
-let diaFuturo = this.diaFuturo
+let ageFuture = this.ageFuture;
+let monthFuture = this.monthFuture
+let dayFuture = this.dayFuture
     let id = Date.now();
     this.data.push({
       id,
       name,
       country,
       age,
-      edadFutura,
-      mesFuturo,
-      diaFuturo
+      ageFuture,
+      monthFuture,
+      dayFuture
     })
     this.emit("change");
   }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './form.css';
-import ShowPrevData from '../components/ShowPrevData.js';
 import InputData from '../components/inputData.js';
 import FormDataStore from '../../stores/formStore.js';
 import * as formActions from '../../actions/formActions.js';  //importa functions por separado, como es como si estuvieran en un objeto
 import apiPaises from '../../api.json';
+import OutputData from '../components/outputData.js';
 
 
 class Form extends Component {
@@ -56,22 +56,9 @@ class Form extends Component {
           />
 
         <div className="FormOutput">
-          <p>Visitantes Anteriores</p>
-          <table className="Tabla">
-            <tbody>
-              {  this.state.UserData.map(e => {
-                  return (
-                    <ShowPrevData
-                      key = {e.id}
-                      name = {e.name}
-                      country = {e.country}
-                      age = {e.age}
-                    />
-                  )
-                })
-              }
-            </tbody>
-          </table>
+          <OutputData
+            UserData = {this.state.UserData}
+           />
         </div>
       </div>
     )

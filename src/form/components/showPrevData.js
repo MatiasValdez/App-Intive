@@ -1,5 +1,5 @@
 import React from 'react';
-import  './outputData.css';
+// import  './outputData.css';
 
 function MostrarDatos (props) {
   return (

@@ -1,0 +1,13 @@
+@import "../../scss/_variables.scss";
+
+th {
+  font-weight: initial;
+  font-size: $small-font-size;
+  float: left;
+  margin-left: 10px;
+}
+p {
+  font-size: $extra-small-font-size;
+  margin: 10px auto 5px 10px;
+  color: $strong-grey;
+}
