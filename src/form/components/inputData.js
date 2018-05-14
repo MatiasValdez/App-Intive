@@ -13,6 +13,7 @@ function InputData (props) {
             ref={props.inputRefName}
             type="text"
             id="Name"
+            // placeholder = "Ingrese su nombre"
            ></input>
 
         <label>Pais:</label>
@@ -34,7 +35,7 @@ function InputData (props) {
         <label>Edad:</label>
           <input
             ref={props.inputRefAge}
-            type="text"
+            type="date"
             id="Age"
           ></input>
 

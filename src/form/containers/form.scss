@@ -1,4 +1,3 @@
-//importo variables
 @import "../../scss/_variables.scss";
 
 
@@ -12,12 +11,13 @@
   grid-row: 1 / 2;
   justify-self: center;
   margin:$form-margin;
-  width: 300px;
+  width: 400px;
   height: 350px;
   background: #FFFFFF;
   border-radius: $button-border-radius;
   border: $button-border;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 input {

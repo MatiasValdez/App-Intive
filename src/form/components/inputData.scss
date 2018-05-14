@@ -1,6 +1,5 @@
 @import "../../scss/_variables.scss";
 
-
 .FormInput {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -10,7 +9,6 @@
 .FormInput label {
   padding-top: 6px;
   justify-self: start;
-  // text-align: center;
   font-size: $small-font-size;
 }
 

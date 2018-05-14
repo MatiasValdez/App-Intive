@@ -16,7 +16,7 @@ class Form extends Component {
     };
   }
 
-  componentWillMount() {  //agrego el listener aca
+  componentWillMount() {
     FormDataStore.on("change", () => {
       this.setState ({
         userData: FormDataStore.getAll(),
@@ -35,6 +35,7 @@ class Form extends Component {
     )
     console.log(this.state.UserData)
   }
+
   inputRefName = element => {
     this.inputName = element;
   }
@@ -44,7 +45,6 @@ class Form extends Component {
   inputRefAge = element => {
     this.inputAge = element;
   }
-
 
   render() {
     return (
@@ -60,6 +60,7 @@ class Form extends Component {
         <div className="FormOutput">
           <OutputData
             userData = {this.state.userData}
+            show = {this.show}
            />
         </div>
         <div className="leyenda">
