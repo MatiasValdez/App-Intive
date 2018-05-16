@@ -25,7 +25,7 @@ class FormStore extends EventEmitter {
     ];
     let actualDate = new Date();
     let year = actualDate.getFullYear();
-    this.ageFuture = year - birthday_arr[0]; // se restan los años
+    this.ageFuture = year - birthday_arr[0]; // se restan los años para calcular edad
     this.monthFuture = fechaRandom[1];
     this.dayFuture = fechaRandom[0];
     if ( fechaRandom[1] < birthday_arr[1] ) {  //Si el mes de la fecha random es menor al mes de cumpleanos
@@ -80,7 +80,7 @@ class FormStore extends EventEmitter {
       } break
       case "LOGLEYENDAS": {
         this.backOldLeyend(action.idLeyenda);
-      }
+      }       
     }
   }
 
