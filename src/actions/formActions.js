@@ -8,3 +8,9 @@ export function submitData (name, country, age) {
     age,
   });
 }
+export function backOldLeyend (idLeyenda) {
+  dispatcher.dispatch({
+    type: "LOGLEYENDAS",
+    idLeyenda,
+  });
+}

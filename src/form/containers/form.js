@@ -27,13 +27,14 @@ class Form extends Component {
 
   submitData = e => {
     e.preventDefault();
-    console.log(this.inputName.value);
+    // console.log(this.inputName.value);
     formActions.submitData(
       this.inputName.value,
       this.inputCountry.value,
       this.inputAge.value
     )
-    console.log(this.state.UserData)
+    this.inputName.value = '';
+    this.inputAge.value = '';
   }
 
   inputRefName = element => {
@@ -44,6 +45,10 @@ class Form extends Component {
   }
   inputRefAge = element => {
     this.inputAge = element;
+  }
+  backOldLeyend (e, id) {
+    e.preventDefault();
+    formActions.backOldLeyend (id);
   }
 
   render() {
@@ -60,7 +65,7 @@ class Form extends Component {
         <div className="FormOutput">
           <OutputData
             userData = {this.state.userData}
-            show = {this.show}
+            backOldLeyend = {this.backOldLeyend}
            />
         </div>
         <div className="leyenda">

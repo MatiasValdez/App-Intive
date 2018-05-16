@@ -13,9 +13,11 @@ function outputData(props) {
             return (
               <ShowPrevData
                 key = {e.id}
+                id = {e.id}
                 name = {e.name}
                 country = {e.country}
                 age = {e.age}
+                backOldLeyend = {props.backOldLeyend}
               />
             )
           })

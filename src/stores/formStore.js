@@ -7,6 +7,9 @@ class FormStore extends EventEmitter {
     super()
     this.data = [
     ];
+    this.logLeyendas = [
+    ];
+    this.id = 0
   }
 
   numeroAleatorio (min, max) {
@@ -43,14 +46,21 @@ class FormStore extends EventEmitter {
     let monthFuture = this.monthFuture
     let dayFuture = this.dayFuture
     let leyendaText = <h2>Hola {name} de {country}. El dia {dayFuture} del {monthFuture} tendrás {ageFuture} años</h2>;
-    let id = Date.now();
+    this.logLeyendas.push = ({leyendaText});
+    let id = this.id;
     this.data.push({
       id,
       name,
       country,
       age,
+      leyendaText,
     })
     this.leyenda = leyendaText;
+    this.emit("change");
+    this.id++;
+  }
+  backOldLeyend (id) {
+    this.leyenda = this.data[id].leyendaText;
     this.emit("change");
   }
 
@@ -64,9 +74,12 @@ class FormStore extends EventEmitter {
   handleActions(action) {
     switch(action.type) {
       case "SUBMIT": {
-        console.log("formStore recived: " + action.name, action.country, action.age);
+        // console.log("formStore recived: " + action.name, action.country, action.age);
         this.calculateAge(action.age);
         this.submitData (action.name, action.country, action.age);
+      } break
+      case "LOGLEYENDAS": {
+        this.backOldLeyend(action.idLeyenda);
       }
     }
   }
